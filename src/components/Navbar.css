@@ -1,0 +1,142 @@
+.navbar {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 20px 40px;
+  background: transparent;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Circular Logo */
+.circular-logo {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  z-index: 1001;
+}
+
+.circular-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.circular-text {
+  font-size: 8px;
+  font-weight: 900;
+  fill: #000000;
+  font-family: 'Courier New', 'Monaco', monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Bubble Menu - Always Visible */
+.bubble-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.bubble-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  height: 45px;
+  background: #FFFFFF;
+  border: 4px solid #000000;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 900;
+  font-size: 0.85rem;
+  font-family: 'Courier New', 'Monaco', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  padding: 0 20px;
+  box-shadow: 
+    4px 4px 0px 0px #32CD32,
+    -2px -2px 0px 0px #9370DB;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.bubble-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    6px 6px 0px 0px #32CD32,
+    -3px -3px 0px 0px #9370DB;
+  background: #FF6B35;
+  color: #FFFFFF;
+}
+
+.bubble-item.active {
+  background: #32CD32;
+  color: #FFFFFF;
+  box-shadow: 
+    4px 4px 0px 0px #000000,
+    -2px -2px 0px 0px #9370DB;
+}
+
+.bubble-item.active:hover {
+  background: #FF6B35;
+  box-shadow: 
+    6px 6px 0px 0px #000000,
+    -3px -3px 0px 0px #9370DB;
+}
+
+.bubble-item span {
+  display: block;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+  
+  .circular-logo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .circular-text {
+    font-size: 6px;
+  }
+  
+  .bubble-menu {
+    gap: 10px;
+  }
+  
+  .bubble-item {
+    min-width: 80px;
+    height: 40px;
+    font-size: 0.7rem;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bubble-menu {
+    gap: 8px;
+  }
+  
+  .bubble-item {
+    min-width: 70px;
+    height: 35px;
+    font-size: 0.65rem;
+    padding: 0 12px;
+  }
+}

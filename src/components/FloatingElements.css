@@ -1,0 +1,44 @@
+.floating-elements-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid;
+  pointer-events: all;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  will-change: transform, background-color, box-shadow;
+  opacity: 0.8;
+}
+
+.floating-circle.illuminated {
+  box-shadow: 0 0 20px currentColor, 0 0 40px currentColor, 0 0 60px currentColor;
+  border-width: 2px;
+  opacity: 0.9;
+  background-color: currentColor;
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px currentColor, 0 0 40px currentColor, 0 0 60px currentColor;
+    opacity: 0.9;
+  }
+  50% {
+    box-shadow: 0 0 30px currentColor, 0 0 60px currentColor, 0 0 90px currentColor;
+    opacity: 1;
+  }
+}
+
+.floating-circle:hover {
+  z-index: 10;
+}

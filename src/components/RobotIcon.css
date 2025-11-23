@@ -1,0 +1,125 @@
+.robot-container {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.robot-image-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.robot-image {
+  width: 300px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+  user-select: none;
+  pointer-events: none;
+  animation: robot-glow 3s ease-in-out infinite;
+  transition: filter 0.3s ease;
+  mix-blend-mode: screen;
+  background: transparent;
+}
+
+.robot-image-wrapper {
+  background: transparent;
+  position: relative;
+  mix-blend-mode: normal;
+}
+
+@keyframes robot-glow {
+  0%, 100% {
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2)) drop-shadow(0 0 10px rgba(50, 205, 50, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2)) drop-shadow(0 0 20px rgba(50, 205, 50, 0.6)) drop-shadow(0 0 30px rgba(147, 112, 219, 0.4));
+  }
+}
+
+.robot-image:hover {
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 25px rgba(50, 205, 50, 0.8)) drop-shadow(0 0 35px rgba(147, 112, 219, 0.6));
+}
+
+/* Speech Bubble */
+.speech-bubble {
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(144, 238, 144, 0.9);
+  border: 3px solid #FFFFFF;
+  border-radius: 15px;
+  padding: 10px 15px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #000000;
+  font-family: 'Courier New', 'Monaco', monospace;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 11;
+  backdrop-filter: blur(5px);
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #FFFFFF;
+}
+
+.speech-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(144, 238, 144, 0.9);
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .robot-container {
+    right: 5%;
+  }
+  
+  .robot-image {
+    width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .robot-container {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin: 30px auto;
+  }
+  
+  .robot-image {
+    width: 180px;
+  }
+  
+  .speech-bubble {
+    font-size: 0.75rem;
+    padding: 8px 12px;
+    top: -60px;
+  }
+}
