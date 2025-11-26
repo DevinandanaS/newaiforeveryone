@@ -1,0 +1,54 @@
+.logoloop {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.logoloop__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.logoloop__list {
+  display: flex;
+  align-items: stretch;
+  gap: var(--logoloop-gap, 32px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.logoloop__item {
+  display: flex;
+  align-items: stretch;
+}
+
+.logoloop--fade::before,
+.logoloop--fade::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  pointer-events: none;
+}
+
+.logoloop--fade::before {
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    var(--logoloop-fadeColor, #ffffff) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.logoloop--fade::after {
+  right: 0;
+  background: linear-gradient(
+    270deg,
+    var(--logoloop-fadeColor, #ffffff) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+

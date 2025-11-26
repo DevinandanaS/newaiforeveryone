@@ -5,6 +5,9 @@ import Lottie from 'lottie-react';
 import Navbar from './Navbar';
 import RobotIcon from './RobotIcon';
 import TrueFocus from './TrueFocus';
+import RotatingText from './RotatingText';
+import LogoLoop from './LogoLoop';
+import GradientText from './GradientText';
 import './HomePage.css';
 
 // Lottie asset references for the Young Makers community card
@@ -701,6 +704,67 @@ const HomePage = () => {
   const navigate = useNavigate();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
+  const partnerCategories = [
+    {
+      title: 'Knowledge Partners',
+      icon: '🧠',
+      points: [
+        'Tech companies & AI experts',
+        'Educators & content creators',
+        'Curriculum designers'
+      ]
+    },
+    {
+      title: 'Financial Partners',
+      icon: '💠',
+      points: [
+        'Program funding & operations',
+        'Resource & material support',
+        'Scaling to new districts'
+      ]
+    },
+    {
+      title: 'Media & Outreach',
+      icon: '🌐',
+      points: [
+        'Traditional & digital media',
+        'Content creators & influencers',
+        'Local language content'
+      ]
+    },
+    {
+      title: 'Resource Partners',
+      icon: '🛡️',
+      points: [
+        'Hardware & software access',
+        'Learning materials & books',
+        'Technical support'
+      ]
+    },
+    {
+      title: 'Community Partners',
+      icon: '🤝',
+      points: [
+        'Schools, libraries, NGOs',
+        'Kudumbashree & workplaces',
+        'Individual volunteer hosts'
+      ]
+    }
+  ];
+
+  const partnerActions = [
+    'Host learning programs & workshops',
+    'Sponsor toolkits & programs',
+    'Open doors for communities',
+    'Volunteer & mentor learners',
+    'Contribute real-world challenges',
+    'Provide financial support'
+  ];
+
+  const handleVolunteerClick = () => {
+    window.location.href = 'mailto:aiforeveryone@tinkerhub.org';
+  };
+
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePosition({
@@ -1015,6 +1079,195 @@ const HomePage = () => {
           <CommunityCarousel />
         </div>
       </section>
+
+      {/* Partner With Us Section */}
+      <section className="partner-section">
+        <div className="partner-container">
+          <motion.p
+            className="partner-subtitle"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            Partners make Kerala&apos;s AI movement real
+          </motion.p>
+
+          <motion.h2
+            className="partner-title"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            Partner With Us
+          </motion.h2>
+
+          <motion.p
+            className="partner-quote"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            “You can help us bring AI literacy to every corner of Kerala. One workshop,
+            one sponsor, one volunteer can change a life.”
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <GradientText className="partner-description" animationSpeed={12}>
+              TinkerHub acts as the enabler of this campaign, holding space for partners and
+              communities to lead, learn, and build together. Choose a role that fits your expertise
+              and help us scale AI literacy statewide.
+            </GradientText>
+          </motion.div>
+
+          <div className="partner-cards-loop">
+            <LogoLoop
+              logos={partnerCategories}
+              gap={120}
+              speed={70}
+              pauseOnHover
+              ariaLabel="Partner categories"
+              renderItem={(category, key) => (
+                <div
+                  className={`partner-card ${
+                    category.title === 'Community Partners' ? 'partner-card--extra-gap' : ''
+                  }`}
+                  key={key}
+                >
+                  <div className="partner-card-icon" aria-hidden="true">
+                    {category.icon}
+                  </div>
+                  <h3 className="partner-card-title">{category.title}</h3>
+                  <ul className="partner-card-points">
+                    {category.points.map((point) => (
+                      <li key={point} className="partner-card-point">
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            />
+          </div>
+
+          <motion.div
+            className="partner-actions"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="partner-actions-header">
+            <div className="partner-rotating-text" aria-hidden="true">
+              <RotatingText
+                texts={[
+                  'How You Can Partner With Us?',
+                  'Support Kerala’s AI Movement',
+                  'Build With TinkerHub Communities'
+                ]}
+                splitBy="words"
+                staggerDuration={0.05}
+                mainClassName="partner-rotating-display"
+                splitLevelClassName="partner-rotating-word"
+                elementLevelClassName="partner-rotating-element"
+              />
+            </div>
+              <div className="partner-actions-copy">
+                <h3>How You Can Partner</h3>
+                <p>
+                  Pick one action or mix a few—every contribution unlocks AI literacy for another
+                  community.
+                </p>
+              </div>
+            </div>
+
+            <div className="partner-actions-list">
+              {partnerActions.map((action) => (
+                <div key={action} className="partner-action">
+                  <span className="partner-check" aria-hidden="true">
+                    ✓
+                  </span>
+                  {action}
+                </div>
+              ))}
+            </div>
+
+            <div className="partner-cta-buttons">
+              <button
+                className="partner-cta-button primary"
+                onClick={() => navigate('/get-involved')}
+              >
+                Become a Host
+              </button>
+              <button
+                className="partner-cta-button"
+                onClick={() => navigate('/get-involved')}
+              >
+                Host a Program
+              </button>
+              <button
+                className="partner-cta-button"
+                onClick={() => navigate('/get-involved')}
+              >
+                Volunteer
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="site-footer">
+        <div className="footer-container">
+          <div className="footer-brand">
+            <div className="footer-logo">
+              <span role="img" aria-hidden="true">⚡</span>
+              <span>AI for Everyone</span>
+            </div>
+            <p>Making AI literacy accessible to every Keralite—enabled by TinkerHub.</p>
+            <p className="footer-note">Together we can set a global model for responsible AI adoption.</p>
+          </div>
+
+          <div className="footer-column">
+            <h4 className="footer-heading">Quick Links</h4>
+            <button className="footer-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+              Home
+            </button>
+            <button className="footer-link" onClick={() => navigate('/about')}>
+              About
+            </button>
+            <button className="footer-link" onClick={() => navigate('/get-involved')}>
+              Get Involved
+            </button>
+            <button className="footer-link" onClick={() => navigate('/resources')}>
+              Resources
+            </button>
+          </div>
+
+          <div className="footer-column">
+            <h4 className="footer-heading">Connect</h4>
+            <a className="footer-link" href="mailto:aiforeveryone@tinkerhub.org">
+              aiforeveryone@tinkerhub.org
+            </a>
+            <a className="footer-link" href="https://tinkerhub.org" target="_blank" rel="noreferrer">
+              tinkerhub.org
+            </a>
+            <a className="footer-link" href="https://instagram.com/tinkerhub" target="_blank" rel="noreferrer">
+              @TinkerHub
+            </a>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          © {new Date().getFullYear()} AI for Everyone. All rights reserved.
+        </div>
+      </footer>
     </div>
   );
 };
