@@ -561,6 +561,99 @@
   margin-bottom: 30px;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
   display: block;
+  animation: iconFloat 3s ease-in-out infinite;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+/* Floating animation for icons */
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.05);
+  }
+}
+
+/* Pulse animation */
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.9;
+  }
+}
+
+/* Bounce animation */
+@keyframes iconBounce {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+/* Rotate and scale animation */
+@keyframes iconRotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* Apply different animations to each card's icon */
+.retro-card:nth-of-type(1) .retro-icon {
+  animation: iconFloat 3s ease-in-out infinite, iconPulse 2s ease-in-out infinite;
+  animation-delay: 0s, 0.5s;
+}
+
+.retro-card:nth-of-type(2) .retro-icon {
+  animation: iconBounce 2.5s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+.retro-card:nth-of-type(3) .retro-icon {
+  animation: iconFloat 3.5s ease-in-out infinite, iconPulse 2.2s ease-in-out infinite;
+  animation-delay: 0s, 0.7s;
+}
+
+/* Hover effect for icons */
+.retro-card:hover .retro-icon {
+  animation-play-state: paused;
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Styling for animated icon images (GIFs/SVGs) */
+.animated-icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  max-width: 80px;
+  max-height: 80px;
+  margin: 0 auto;
+}
+
+/* Ensure icon container can handle both emojis and images */
+.retro-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
 }
 
 .retro-card p {
@@ -617,5 +710,546 @@
   
   .retro-card p {
     font-size: 0.95rem;
+  }
+}
+
+/* Our Approach Section */
+.our-approach-section {
+  padding: 100px 60px;
+  background: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.our-approach-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.our-approach-heading {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  color: #000000;
+  margin-bottom: 30px;
+  line-height: 1.2;
+  font-family: 'Courier New', 'Monaco', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.our-approach-tagline {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 60px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Bounce Cards Container */
+.bounce-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Bounce Card */
+.bounce-card {
+  background: linear-gradient(135deg, rgba(50, 205, 50, 0.08), rgba(147, 112, 219, 0.08));
+  border: 4px solid #000000;
+  border-radius: 8px;
+  padding: 50px 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    8px 8px 0px 0px #32CD32;
+  animation: cardBounce 3s ease-in-out infinite;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.bounce-card:nth-child(1) {
+  animation-delay: 0s;
+  background: linear-gradient(135deg, rgba(50, 205, 50, 0.1), rgba(147, 112, 219, 0.1));
+  border-color: #32CD32;
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    8px 8px 0px 0px #32CD32;
+}
+
+.bounce-card:nth-child(2) {
+  animation-delay: 0.2s;
+  background: linear-gradient(135deg, rgba(147, 112, 219, 0.1), rgba(255, 107, 53, 0.1));
+  border-color: #9370DB;
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    8px 8px 0px 0px #9370DB;
+}
+
+.bounce-card:nth-child(3) {
+  animation-delay: 0.4s;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(50, 205, 50, 0.1));
+  border-color: #FF6B35;
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    8px 8px 0px 0px #FF6B35;
+}
+
+@keyframes cardBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+
+.bounce-card:nth-child(1):hover {
+  box-shadow: 
+    0 12px 24px rgba(0, 0, 0, 0.15),
+    12px 12px 0px 0px #32CD32;
+  border-color: #28a828;
+  animation-play-state: paused;
+}
+
+.bounce-card:nth-child(2):hover {
+  box-shadow: 
+    0 12px 24px rgba(0, 0, 0, 0.15),
+    12px 12px 0px 0px #9370DB;
+  border-color: #7b5fb8;
+  animation-play-state: paused;
+}
+
+.bounce-card:nth-child(3):hover {
+  box-shadow: 
+    0 12px 24px rgba(0, 0, 0, 0.15),
+    12px 12px 0px 0px #FF6B35;
+  border-color: #e55a2b;
+  animation-play-state: paused;
+}
+
+/* Bounce Card Icon */
+.bounce-card-icon {
+  margin: 0 auto 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.4s ease;
+  font-size: 5rem;
+  line-height: 1;
+  animation: iconFloatBounce 2.5s ease-in-out infinite;
+}
+
+.bounce-card:nth-child(1) .bounce-card-icon {
+  animation-delay: 0s;
+}
+
+.bounce-card:nth-child(2) .bounce-card-icon {
+  animation-delay: 0.2s;
+}
+
+.bounce-card:nth-child(3) .bounce-card-icon {
+  animation-delay: 0.4s;
+}
+
+@keyframes iconFloatBounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.05);
+  }
+}
+
+.bounce-card:hover .bounce-card-icon {
+  transform: scale(1.15) rotate(5deg);
+  animation-play-state: paused;
+}
+
+/* Bounce Card Text */
+.bounce-card-title {
+  font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+  font-weight: 900;
+  color: #000000;
+  margin-bottom: 10px;
+  font-family: 'Courier New', 'Monaco', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-style: normal;
+}
+
+.bounce-card-subtitle {
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-style: italic;
+}
+
+.bounce-card-description {
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  color: #333333;
+  line-height: 1.7;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  margin: 0;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Responsive Design for Our Approach Section */
+@media (max-width: 1024px) {
+  .our-approach-section {
+    padding: 80px 40px;
+  }
+  
+  .bounce-cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .our-approach-section {
+    padding: 60px 20px;
+  }
+  
+  .bounce-cards-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .bounce-card {
+    padding: 40px 25px;
+  }
+  
+  .bounce-card-icon {
+    font-size: 4rem;
+  }
+}
+
+/* Who Is This For Section */
+.who-is-this-for-section {
+  padding: 100px 60px;
+  background: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.who-is-this-for-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.who-is-this-for-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.who-is-this-for-heading {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  color: #000000;
+  margin-bottom: 60px;
+  line-height: 1.2;
+  font-family: 'Courier New', 'Monaco', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.typewriter-text {
+  display: inline-block;
+}
+
+/* Community Carousel */
+.community-carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.carousel-nav-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 3px solid #000000;
+  color: #000000;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 20;
+  box-shadow: 4px 4px 0px 0px #32CD32;
+}
+
+.carousel-nav-btn:hover {
+  background: #F5F5F5;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #32CD32;
+}
+
+.carousel-nav-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #32CD32;
+}
+
+.carousel-track {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.community-card {
+  position: absolute;
+  width: 100%;
+  max-width: 500px;
+  background: linear-gradient(135deg, rgba(50, 205, 50, 0.08), rgba(147, 112, 219, 0.08));
+  border: 4px solid #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    8px 8px 0px 0px #32CD32;
+  transition: all 0.5s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.community-card.active {
+  cursor: default;
+}
+
+.community-card:nth-of-type(1) {
+  border-color: #32CD32;
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    8px 8px 0px 0px #32CD32;
+}
+
+.community-card:nth-of-type(2) {
+  border-color: #9370DB;
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    8px 8px 0px 0px #9370DB;
+}
+
+.community-card:nth-of-type(3) {
+  border-color: #FF6B35;
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    8px 8px 0px 0px #FF6B35;
+}
+
+.community-card-image {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(135deg, #32CD32 0%, #9370DB 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.community-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: imageFloat 3s ease-in-out infinite;
+}
+
+@keyframes imageFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+
+.community-card-icon-fallback {
+  font-size: 5rem;
+  color: #FFFFFF;
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.community-card-content {
+  padding: 30px;
+}
+
+.community-card-subtitle {
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  color: #666666;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+  font-family: 'Courier New', 'Monaco', monospace;
+  font-weight: 600;
+}
+
+.community-card-title {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 900;
+  color: #000000;
+  margin-bottom: 15px;
+  font-family: 'Courier New', 'Monaco', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.community-card-description {
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  color: #333333;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-style: italic;
+}
+
+.community-activities {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.activity-btn {
+  background: #FFFFFF;
+  border: 3px solid #000000;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: clamp(0.85rem, 1.1vw, 1rem);
+  font-weight: 600;
+  color: #000000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  font-family: 'Courier New', 'Monaco', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 4px 4px 0px 0px #32CD32;
+}
+
+.activity-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #32CD32;
+}
+
+.activity-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #32CD32;
+}
+
+.activity-icon {
+  font-size: 1rem;
+  animation: starTwinkle 2s ease-in-out infinite;
+}
+
+@keyframes starTwinkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 0.8;
+  }
+}
+
+/* Responsive Design for Who Is This For Section */
+@media (max-width: 1024px) {
+  .who-is-this-for-section {
+    padding: 80px 40px;
+  }
+  
+  .carousel-track {
+    height: 550px;
+  }
+  
+  .community-card {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .who-is-this-for-section {
+    padding: 60px 20px;
+  }
+  
+  .carousel-wrapper {
+    gap: 10px;
+  }
+  
+  .carousel-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+  
+  .carousel-track {
+    height: 500px;
+  }
+  
+  .community-card {
+    max-width: 90%;
+  }
+  
+  .community-card-image {
+    height: 200px;
+  }
+  
+  .community-activities {
+    grid-template-columns: 1fr;
   }
 }
