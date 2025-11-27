@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import './GetInvolvedPage.css';
 
 const GetInvolvedPage = () => {
@@ -10,6 +11,7 @@ const GetInvolvedPage = () => {
         <h1>Get Involved</h1>
         <p>Get Involved page content coming soon...</p>
       </div>
+      <Footer />
     </div>
   );
 };

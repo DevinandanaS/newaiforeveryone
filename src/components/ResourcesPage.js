@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import './ResourcesPage.css';
 
 const ResourcesPage = () => {
@@ -10,6 +11,7 @@ const ResourcesPage = () => {
         <h1>Resources</h1>
         <p>Resources page content coming soon...</p>
       </div>
+      <Footer />
     </div>
   );
 };

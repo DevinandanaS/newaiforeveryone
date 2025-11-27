@@ -129,7 +129,7 @@ const RobotIcon = ({ mousePosition }) => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            style={{ width: '300px', height: '300px' }}
+            style={{ width: '420px', height: '420px' }}
           >
             <Lottie 
               animationData={chatbotLottieData}
