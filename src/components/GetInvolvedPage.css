@@ -1,31 +1,403 @@
 .get-involved-page {
-  min-height: 100vh;
-  position: relative;
-  background: #FFFFFF;
-  padding: 120px 60px 80px;
+    min-height: 100vh;
+    position: relative;
+    background: #FFFFFF;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    overflow-x: hidden;
 }
 
-.get-involved-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  z-index: 2;
-  position: relative;
+.hero-section {
+    padding: 0 40px 10px;
+    text-align: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: -20px;
 }
 
-.get-involved-content h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 900;
-  color: #000000;
-  font-family: 'Courier New', 'Monaco', monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 30px;
+.page-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    color: #000000;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    font-family: 'Courier New', 'Monaco', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    line-height: 1;
 }
 
-.get-involved-content p {
-  font-size: 1.2rem;
-  color: #000000;
-  font-family: 'Courier New', 'Monaco', monospace;
-  line-height: 1.8;
+.page-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 600;
+    color: #666666;
+    line-height: 1.4;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    text-transform: none;
+    letter-spacing: normal;
+    display: block;
 }
 
+.cards-section {
+    padding: 20px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.involvement-card {
+    width: 100%;
+}
+
+.involvement-card-inner {
+    background: #FFFFFF;
+    border: 5px solid #000000;
+    border-radius: 12px;
+    padding: 40px 35px;
+    text-align: center;
+    box-shadow: 12px 12px 0px 0px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.involvement-card-inner:hover {
+    transform: translateY(-5px);
+}
+
+.card-1 .involvement-card-inner {
+    box-shadow: 12px 12px 0px 0px #32CD32;
+}
+
+.card-1 .involvement-card-inner:hover {
+    box-shadow: 16px 16px 0px 0px #32CD32;
+}
+
+.card-2 .involvement-card-inner {
+    box-shadow: 12px 12px 0px 0px #9370DB;
+}
+
+.card-2 .involvement-card-inner:hover {
+    box-shadow: 16px 16px 0px 0px #9370DB;
+}
+
+.card-3 .involvement-card-inner {
+    box-shadow: 12px 12px 0px 0px #FF6B35;
+}
+
+.card-3 .involvement-card-inner:hover {
+    box-shadow: 16px 16px 0px 0px #FF6B35;
+}
+
+.card-4 .involvement-card-inner {
+    box-shadow: 12px 12px 0px 0px #9370DB;
+}
+
+.card-4 .involvement-card-inner:hover {
+    box-shadow: 16px 16px 0px 0px #9370DB;
+}
+
+.card-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.involvement-card-inner h2 {
+    font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+    font-weight: 900;
+    color: #000000;
+    margin-bottom: 12px;
+    font-family: 'Courier New', 'Monaco', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.card-description {
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    color: #666666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.card-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    text-align: left;
+    width: 100%;
+    max-width: 480px;
+}
+
+.card-bullets li {
+    font-size: clamp(0.8rem, 1vw, 0.9rem);
+    color: #000000;
+    line-height: 1.7;
+    margin-bottom: 8px;
+    font-family: 'Courier New', 'Monaco', monospace;
+    padding-left: 10px;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
+    font-weight: 700;
+    font-family: 'Courier New', 'Monaco', monospace;
+    background: #000000;
+    color: #FFFFFF;
+    border: 3px solid #000000;
+    border-radius: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    cursor: pointer;
+}
+
+.card-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 6px 6px 0px 0px #000000;
+}
+
+.more-ways-section {
+    padding: 60px 60px 40px;
+    background: rgba(0, 0, 0, 0.02);
+    position: relative;
+    margin-top: 40px;
+}
+
+.section-title {
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    font-weight: 900;
+    color: #000000;
+    margin-bottom: 35px;
+    text-align: center;
+    font-family: 'Courier New', 'Monaco', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.more-ways-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.more-way-card {
+    background: #FFFFFF;
+    border: 4px solid #000000;
+    border-radius: 8px;
+    padding: 35px 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.more-way-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 12px 12px 0px 0px rgba(0, 0, 0, 0.15);
+}
+
+.more-way-card:nth-child(1) {
+    border-color: #32CD32;
+    box-shadow: 8px 8px 0px 0px #32CD32;
+}
+
+.more-way-card:nth-child(1):hover {
+    box-shadow: 12px 12px 0px 0px #32CD32;
+}
+
+.more-way-card:nth-child(2) {
+    border-color: #9370DB;
+    box-shadow: 8px 8px 0px 0px #9370DB;
+}
+
+.more-way-card:nth-child(2):hover {
+    box-shadow: 12px 12px 0px 0px #9370DB;
+}
+
+.more-way-card:nth-child(3) {
+    border-color: #FF6B35;
+    box-shadow: 8px 8px 0px 0px #FF6B35;
+}
+
+.more-way-card:nth-child(3):hover {
+    box-shadow: 12px 12px 0px 0px #FF6B35;
+}
+
+.more-way-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.more-way-card h3 {
+    font-size: clamp(1rem, 1.4vw, 1.3rem);
+    font-weight: 900;
+    color: #000000;
+    margin-bottom: 10px;
+    font-family: 'Courier New', 'Monaco', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.more-way-card p {
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
+    color: #666666;
+    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.contact-section {
+    padding: 60px 60px 50px;
+    background: transparent;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.contact-intro {
+    font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+    color: #666666;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.contact-details {
+    background: rgba(255, 255, 255, 0.9);
+    border: 4px solid #000000;
+    border-radius: 8px;
+    padding: 35px 30px;
+    box-shadow: 8px 8px 0px 0px #9370DB;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    font-family: 'Courier New', 'Monaco', monospace;
+    flex-wrap: wrap;
+}
+
+.contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-label {
+    font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.contact-link {
+    font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+    color: #9370DB;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.contact-link:hover {
+    color: #32CD32;
+    text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+    .hero-section {
+        padding: 0 40px 10px;
+        margin-top: -15px;
+    }
+
+    .cards-section {
+        padding: 20px 40px;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .more-ways-section {
+        padding: 80px 40px 50px;
+    }
+
+    .contact-section {
+        padding: 60px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 0 20px 10px;
+        margin-top: -10px;
+    }
+
+    .cards-section {
+        padding: 15px 20px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .involvement-card-inner {
+        padding: 35px 25px;
+    }
+
+    .card-bullets {
+        text-align: center;
+    }
+
+    .more-ways-section {
+        padding: 60px 20px 40px;
+    }
+
+    .more-ways-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .contact-section {
+        padding: 50px 20px 45px;
+    }
+
+    .contact-details {
+        padding: 30px 22px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
+}
