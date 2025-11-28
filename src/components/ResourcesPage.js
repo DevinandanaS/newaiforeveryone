@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import BlurText from './BlurText';
 import Lottie from 'lottie-react';
+import educationAnimation from '../animations/Education.json';
+import bookLoadingAnimation from '../animations/Book loading.json';
+import aiReportCardAnimation from '../animations/Ai Report card.json';
 import secureLoginAnimation from '../animations/secureloginanimation.json';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -10,21 +15,24 @@ const ResourcesPage = () => {
 
   const mainCards = [
     {
-      icon: '📄',
+      icon: null,
+      lottie: bookLoadingAnimation,
       title: 'Campaign PDF',
       description: 'Download our comprehensive campaign document outlining the vision, approach, and partnership opportunities.',
       buttonText: 'Download PDF',
       buttonLink: '#'
     },
     {
-      icon: '🧠',
+      icon: null,
+      lottie: aiReportCardAnimation,
       title: 'Learning Materials',
       description: 'Access free AI learning resources for KuttyMakers, Young Makers, and Friends of the Movement in multiple languages.',
       buttonText: 'Browse Materials',
       buttonLink: '#'
     },
     {
-      icon: '👥',
+      icon: null,
+      lottie: educationAnimation,
       title: 'Workshop Guides',
       description: 'Step-by-step guides for organizing and facilitating AI literacy workshops, study jams, and learning circles.',
       buttonText: 'View Guides',
@@ -32,7 +40,7 @@ const ResourcesPage = () => {
     },
     {
       icon: null,
-      lottie: 'https://lottie.host/a0b7ec52-8c7e-4c59-b213-c4e8e2e1a5aa/ErwbAUAGdH.lottie',
+      lottie: secureLoginAnimation,
       title: 'Safety & Ethics',
       description: 'Learn about AI safety, identifying deepfakes and misinformation, protecting privacy, and ethical AI use.',
       buttonText: 'Safety Guide',
@@ -71,7 +79,18 @@ const ResourcesPage = () => {
       <Navbar />
       
       <div className="resources-header">
-        <h1 className="resources-title">Resources</h1>
+        <Link to="/home" className="resources-back-link">
+          ← Back to Home
+        </Link>
+        <div style={{ position: 'relative', width: '100%', marginBottom: '20px', display: 'flex', justifyContent: 'center' }}>
+          <BlurText 
+            text="RESOURCES" 
+            delay={100}
+            className="resources-blur-heading"
+            animateBy="words"
+            direction="top"
+          />
+        </div>
         <p className="resources-subtitle">Learning materials, guides, and campaign information.</p>
       </div>
       
@@ -95,7 +114,7 @@ const ResourcesPage = () => {
                     {card.lottie ? (
                       <div className="card-lottie-wrapper">
                         <Lottie 
-                          animationData={secureLoginAnimation} 
+                          animationData={card.lottie} 
                           loop={true}
                           autoplay={true}
                         />
