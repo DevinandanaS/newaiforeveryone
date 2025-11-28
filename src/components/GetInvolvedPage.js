@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import './GetInvolvedPage.css';
@@ -85,11 +86,21 @@ const GetInvolvedPage = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <div className="hero-section">
-        <h1 className="page-title">
-          Get Involved
-          <span className="page-subtitle">Join us in bringing AI literacy to every corner of Kerala.</span>
-        </h1>
+      <div className="hero-section-wrapper">
+        <Link to="/home" className="get-involved-back-link">
+          ← Back to Home
+        </Link>
+        <div className="hero-section">
+          <div className="hero-content">
+            <h1 className="page-title">
+              <span className="title-text">Get Involved</span>
+              <span className="page-subtitle">Join us in bringing AI literacy to every corner of Kerala.</span>
+            </h1>
+          </div>
+          <div className="hero-image">
+            <img src="/image/54950.jpg" alt="AI and Community Learning" />
+          </div>
+        </div>
       </div>
 
       {/* Main Cards Section */}
