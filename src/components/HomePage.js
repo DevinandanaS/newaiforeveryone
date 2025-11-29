@@ -1224,6 +1224,22 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Quote Section */}
+      <section className="quote-section">
+        <div className="quote-container">
+          <div className="quote-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <blockquote className="quote-text">
+            "AI will shape the future of work, culture, and communities. Kerala can either be a consumer or a creator. With your partnership, we can ensure every Keralite learns, builds, and creates responsibly with AI. This is our chance to set a global model again, like we did with digital literacy."
+          </blockquote>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
